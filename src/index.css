@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+    --color-primary: #182232;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #2d3748;
+    --color-on-primary-container: #96a0b5;
+    
+    --color-secondary: #545f72;
+    --color-secondary-container: #d5e0f7;
+    --color-on-secondary-container: #586377;
+    
+    --color-surface: #ffffff;
+    --color-surface-dim: #f3f4f6;
+    --color-surface-container: #f0edef;
+    --color-surface-container-high: #f9fafb;
+    --color-surface-container-highest: #e4e2e3;
+    
+    --color-on-surface: #1b1b1d;
+    --color-on-surface-variant: #45474c;
+    --color-outline: #75777d;
+    --color-outline-variant: #e5e7eb;
+    
+    --color-accent-sage: #2e7d32;
+    --color-accent-sage-bg: #f1f8f3;
+    --color-accent-blue: #1e40af;
+    --color-accent-blue-bg: #eff6ff;
+    --color-accent-amber: #b45309;
+    --color-accent-amber-bg: #fffbeb;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    color: var(--color-on-surface);
+    background-color: #fbf8fa;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, nav, button, input, select, textarea, label, .font-ui {
+    font-family: var(--font-sans);
+  }
+
+  code, pre, .font-code {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Reading Container and Typography Utilities */
+.max-w-reading {
+  max-width: 720px;
+}
+
+.scientific-reading-content {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+.scientific-reading-content p {
+  margin-bottom: 1.5rem;
+}
+
+.scientific-reading-content h2 {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #182232;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.scientific-reading-content h3 {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #182232;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Custom scrollbars for data tables */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

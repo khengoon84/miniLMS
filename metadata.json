@@ -1,0 +1,6 @@
+{
+  "name": "ScienceLink Workshop Portal",
+  "description": "A digital scientific learning and pre-reading portal for workshop modules, scientific literature, knowledge checks, and technical resources.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
