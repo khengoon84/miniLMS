@@ -335,18 +335,24 @@ export const ReadingSectionView: React.FC<ReadingSectionViewProps> = ({ moduleId
 
                   case 'key-takeaways':
                     return (
-                      <div key={idx} className="my-8 p-6 bg-slate-900 text-white rounded-xl">
-                        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-slate-700">
-                          <CheckCircle className="w-5 h-5 text-emerald-400" />
-                          <h4 className="font-bold text-sm tracking-wider uppercase text-white">
-                            {block.title || 'Section Key Takeaways'}
+                      <div key={idx} className="my-8 bg-emerald-50/50 border border-emerald-200/80 rounded-xl p-6 sm:p-7 shadow-2xs">
+                        <div className="flex items-center gap-3 mb-5">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 border border-emerald-300/60 flex items-center justify-center">
+                            <CheckCircle className="w-4 h-4" />
+                          </div>
+                          <h4 className="text-base font-bold text-emerald-950 uppercase tracking-wider">
+                            {block.title || 'Key Takeaways'}
                           </h4>
                         </div>
-                        <ul className="space-y-2.5 text-sm sm:text-base text-slate-200">
+                        <ul className="space-y-3">
                           {block.items.map((item, itemIdx) => (
-                            <li key={itemIdx} className="flex items-start gap-2.5">
-                              <span className="text-emerald-400 font-bold">•</span>
-                              <span>{item}</span>
+                            <li key={itemIdx} className="flex items-start gap-3">
+                              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-200/60 text-emerald-800 border border-emerald-300 flex items-center justify-center mt-0.5 text-xs font-bold">
+                                ✓
+                              </span>
+                              <span className="text-sm sm:text-base text-slate-800 leading-relaxed">
+                                {item}
+                              </span>
                             </li>
                           ))}
                         </ul>

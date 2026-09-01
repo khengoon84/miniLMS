@@ -85,15 +85,15 @@ export const Callout: React.FC<CalloutProps> = ({ variant, title, content }) => 
       return (
         <aside 
           aria-label={title}
-          className="my-8 p-5 sm:p-6 bg-[#182232] text-white"
+          className="my-8 p-5 sm:p-6 bg-emerald-50/60 border-l-4 border-emerald-600 text-slate-900 rounded-r-xl"
         >
           <div className="flex items-center gap-2.5 mb-2.5">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-            <h4 className="font-sans text-base sm:text-lg font-semibold tracking-tight text-white uppercase tracking-wider text-xs sm:text-sm">
+            <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
+            <h4 className="font-sans text-sm sm:text-base font-bold tracking-wider text-emerald-950 uppercase">
               {title}
             </h4>
           </div>
-          <p className="font-serif text-[1.0625rem] leading-[1.68] text-gray-200">
+          <p className="font-serif text-[1.0625rem] leading-[1.68] text-slate-800">
             {content}
           </p>
         </aside>

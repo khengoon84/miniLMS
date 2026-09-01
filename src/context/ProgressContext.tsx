@@ -17,9 +17,9 @@ interface ProgressContextType {
 }
 
 const defaultProgress: UserProgressState = {
-  completedSectionIds: ['m4-s1', 'm4-s2'], // initial representative state for preview realism
+  completedSectionIds: [],
   completedQuizResults: {},
-  lastVisitedPath: '/modules/module-04/m4-s3',
+  lastVisitedPath: '/',
   notes: {},
   objectivesChecked: {},
 };
