@@ -19,18 +19,31 @@ export const ResourceLibraryView: React.FC = () => {
   const { route, navigate } = useRouter();
   const [selectedAbstractItem, setSelectedAbstractItem] = useState<ResourceItem | null>(null);
   const [downloadedIds, setDownloadedIds] = useState<Record<string, boolean>>({});
-  const [searchFilter, setSearchFilter] = useState('');
+  const [notification, setNotification] = useState<string | null>(null);
 
   const coreMaterials = resourcesData.filter((r) => r.category === 'core');
   const literatureItems = resourcesData.filter((r) => r.category === 'literature');
   const sopProtocols = resourcesData.filter((r) => r.category === 'sop');
 
-  const handleDownload = (id: string, title: string) => {
-    // Client-side simulated download notification
-    setDownloadedIds((prev) => ({ ...prev, [id]: true }));
-    setTimeout(() => {
-      setDownloadedIds((prev) => ({ ...prev, [id]: false }));
-    }, 3000);
+  const handleDownload = (item: ResourceItem) => {
+    if (item.downloadUrl) {
+      const link = document.createElement('a');
+      link.href = item.downloadUrl;
+      link.setAttribute('download', item.downloadUrl.split('/').pop() || `${item.id}.pdf`);
+      link.setAttribute('target', '_blank');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setDownloadedIds((prev) => ({ ...prev, [item.id]: true }));
+      setNotification(`Initiating download for "${item.title}".`);
+      setTimeout(() => {
+        setDownloadedIds((prev) => ({ ...prev, [item.id]: false }));
+        setNotification(null);
+      }, 4000);
+    } else if (item.externalUrl) {
+      window.open(item.externalUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -96,7 +109,7 @@ export const ResourceLibraryView: React.FC = () => {
                     Official Workshop Material
                   </span>
                   <button
-                    onClick={() => handleDownload(item.id, item.title)}
+                    onClick={() => handleDownload(item)}
                     className="px-4 py-2 bg-[#182232] text-white hover:bg-slate-800 text-xs font-sans font-semibold flex items-center gap-2 transition-colors shadow-2xs"
                   >
                     {downloadedIds[item.id] ? (
@@ -176,7 +189,7 @@ export const ResourceLibraryView: React.FC = () => {
                     </a>
                   ) : (
                     <button
-                      onClick={() => handleDownload(item.id, item.title)}
+                      onClick={() => handleDownload(item)}
                       className="px-4 py-2 bg-[#182232] text-white hover:bg-slate-800 text-xs font-sans font-semibold flex items-center gap-2 transition-colors"
                     >
                       {downloadedIds[item.id] ? (
@@ -240,7 +253,7 @@ export const ResourceLibraryView: React.FC = () => {
                     </td>
                     <td className="py-4 px-5 text-right whitespace-nowrap">
                       <button
-                        onClick={() => handleDownload(sop.id, sop.title)}
+                        onClick={() => handleDownload(sop)}
                         className="px-3.5 py-1.5 border border-gray-300 bg-white hover:bg-gray-50 text-[#182232] font-semibold text-xs inline-flex items-center gap-1.5 transition-colors"
                       >
                         {downloadedIds[sop.id] ? (
@@ -318,7 +331,7 @@ export const ResourceLibraryView: React.FC = () => {
                 ) : (
                   <button
                     onClick={() => {
-                      handleDownload(selectedAbstractItem.id, selectedAbstractItem.title);
+                      handleDownload(selectedAbstractItem);
                       setSelectedAbstractItem(null);
                     }}
                     className="px-4 py-2 bg-[#182232] text-white hover:bg-slate-800 flex items-center gap-1"
@@ -329,6 +342,14 @@ export const ResourceLibraryView: React.FC = () => {
                 )}
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Status Notification Toast */}
+        {notification && (
+          <div className="fixed bottom-6 right-6 z-50 bg-[#182232] text-white px-4 py-3 rounded-lg shadow-xl border border-slate-700 text-xs font-sans flex items-center gap-3 animate-fade-in">
+            <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>{notification}</span>
           </div>
         )}
 

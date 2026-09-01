@@ -116,22 +116,22 @@ export const HomeView: React.FC = () => {
         
         {/* All Modules Complete Banner (if finished) */}
         {allModulesComplete && (
-          <section aria-label="Completion status" className="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-emerald-500/30">
+          <section aria-label="Completion status" className="bg-emerald-50/90 border border-emerald-300/80 rounded-2xl p-6 sm:p-8 shadow-xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center justify-center shrink-0">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold uppercase tracking-wider bg-emerald-500/30 text-emerald-200 px-2.5 py-0.5 rounded-full border border-emerald-400/30">
+                    <span className="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full border border-emerald-300">
                       Workshop Preparation Completed
                     </span>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-bold text-emerald-950 tracking-tight">
                     Pre-Workshop Reading Complete
                   </h2>
-                  <p className="text-sm text-slate-200 mt-1 max-w-xl">
+                  <p className="text-sm text-slate-700 mt-1 max-w-xl">
                     You have completed the four-module pre-workshop reading. Proceed to the Learning Pathway and Overall Knowledge Check to verify your preparation for the hands-on laboratory.
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export const HomeView: React.FC = () => {
 
               <button
                 onClick={() => navigate('/pathway')}
-                className="self-start sm:self-center px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 shrink-0"
+                className="self-start sm:self-center px-5 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs flex items-center gap-2 shrink-0"
               >
                 <span>View Final Reflection & Assessment</span>
                 <ArrowRight className="w-4 h-4" />

@@ -15,18 +15,18 @@ export const WhyThisMattersCard: React.FC<WhyThisMattersCardProps> = ({
   return (
     <div
       id={`why-this-matters-${moduleId}`}
-      className={`relative overflow-hidden bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-900 text-white rounded-xl p-6 sm:p-7 shadow-md border border-indigo-800/40 ${className}`}
+      className={`relative overflow-hidden bg-indigo-50/60 border border-indigo-200/80 rounded-xl p-6 sm:p-7 shadow-2xs ${className}`}
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-800 border border-indigo-200 flex items-center justify-center flex-shrink-0">
           <Compass className="w-4 h-4" />
         </div>
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-indigo-300">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-indigo-950">
           Why This Matters
         </h3>
       </div>
 
-      <div className="space-y-3.5 text-slate-200 text-sm sm:text-base leading-relaxed">
+      <div className="space-y-3.5 text-slate-800 text-sm sm:text-base leading-relaxed">
         {paragraphs.map((p, idx) => (
           <p key={idx} className="whitespace-pre-line">
             {p}

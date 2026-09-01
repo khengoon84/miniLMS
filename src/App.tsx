@@ -1,8 +1,10 @@
 import React from 'react';
 import { RouterProvider, useRouter } from './context/RouterContext';
 import { ProgressProvider } from './context/ProgressContext';
+import { AccessProvider, useAccess } from './context/AccessContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import { WorkshopAccessView } from './components/access/WorkshopAccessView';
 import { HomeView } from './components/home/HomeView';
 import { ModuleListView } from './components/modules/ModuleListView';
 import { ModuleOverviewView } from './components/modules/ModuleOverviewView';
@@ -14,7 +16,12 @@ import { SearchView } from './components/search/SearchView';
 import { OverallPathwayView } from './components/pathway/OverallPathwayView';
 
 const AppContent: React.FC = () => {
+  const { hasAccess } = useAccess();
   const { route, navigate } = useRouter();
+
+  if (!hasAccess) {
+    return <WorkshopAccessView />;
+  }
 
   const renderCurrentView = () => {
     switch (route.name) {
@@ -84,12 +91,15 @@ const AppContent: React.FC = () => {
 
 export function App() {
   return (
-    <RouterProvider>
-      <ProgressProvider>
-        <AppContent />
-      </ProgressProvider>
-    </RouterProvider>
+    <AccessProvider>
+      <RouterProvider>
+        <ProgressProvider>
+          <AppContent />
+        </ProgressProvider>
+      </RouterProvider>
+    </AccessProvider>
   );
 }
 
 export default App;
+

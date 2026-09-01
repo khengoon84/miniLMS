@@ -1672,6 +1672,7 @@ export const resourcesData: ResourceItem[] = [
     sizeOrDoi: 'PDF • Master Course Document (13 Pages)',
     authorInfo: 'ScienceLink Scientific Program Committee',
     publishedDate: '2026',
+    downloadUrl: '/resources/master-guide-mrna-vaccine-design.pdf',
   },
   {
     id: 'res-lit-01',
@@ -1680,6 +1681,7 @@ export const resourcesData: ResourceItem[] = [
     category: 'literature',
     type: 'doi',
     sizeOrDoi: 'DOI: 10.1038/nrd.2017.243',
+    externalUrl: 'https://doi.org/10.1038/nrd.2017.243',
     authorInfo: 'Pardi, N., Hogan, M. J., Porter, F. W., & Weissman, D.',
     publishedJournal: 'Nature Reviews Drug Discovery, 17(4), 261–279 (2018)',
     publishedDate: '2018',
@@ -1692,6 +1694,7 @@ export const resourcesData: ResourceItem[] = [
     category: 'literature',
     type: 'doi',
     sizeOrDoi: 'DOI: 10.1038/s41578-021-00358-0',
+    externalUrl: 'https://doi.org/10.1038/s41578-021-00358-0',
     authorInfo: 'Hou, X., Zaks, T., Langer, R., & Dong, Y.',
     publishedJournal: 'Nature Reviews Materials, 6(12), 1078–1094 (2021)',
     publishedDate: '2021',
@@ -1706,6 +1709,7 @@ export const resourcesData: ResourceItem[] = [
     documentId: 'SOP-MRNA-301',
     sizeOrDoi: 'PDF • Laboratory Protocol Guide',
     lastUpdated: 'Master Workshop Series (2026)',
+    downloadUrl: '/resources/sop-mrna-301-ivt-purification.pdf',
   },
   {
     id: 'res-sop-02',
@@ -1716,5 +1720,6 @@ export const resourcesData: ResourceItem[] = [
     documentId: 'SOP-LNP-401',
     sizeOrDoi: 'PDF • Formulation & QC Guide',
     lastUpdated: 'Master Workshop Series (2026)',
+    downloadUrl: '/resources/sop-lnp-401-microfluidic-formulation.pdf',
   },
 ];

@@ -12,12 +12,16 @@ interface ProgressContextType {
   getQuizResult: (quizId: string) => { selectedOptionId: string; isCorrect: boolean; timestamp: number } | undefined;
   setLastVisited: (path: string) => void;
   getModuleProgressPercentage: (sectionIds: string[]) => number;
+  updateProgress: (updates: Partial<UserProgressState>) => void;
+  setNote: (key: string, note: string) => void;
 }
 
 const defaultProgress: UserProgressState = {
   completedSectionIds: ['m4-s1', 'm4-s2'], // initial representative state for preview realism
   completedQuizResults: {},
   lastVisitedPath: '/modules/module-04/m4-s3',
+  notes: {},
+  objectivesChecked: {},
 };
 
 const ProgressContext = createContext<ProgressContextType | null>(null);
@@ -104,6 +108,23 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return Math.round((completedCount / sectionIds.length) * 100);
   }, [progress.completedSectionIds]);
 
+  const updateProgress = useCallback((updates: Partial<UserProgressState>) => {
+    setProgress((prev) => ({
+      ...prev,
+      ...updates,
+    }));
+  }, []);
+
+  const setNote = useCallback((key: string, note: string) => {
+    setProgress((prev) => ({
+      ...prev,
+      notes: {
+        ...(prev.notes || {}),
+        [key]: note,
+      },
+    }));
+  }, []);
+
   const contextValue = useMemo<ProgressContextType>(() => ({
     progress,
     isSectionCompleted,
@@ -113,6 +134,8 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     getQuizResult,
     setLastVisited,
     getModuleProgressPercentage,
+    updateProgress,
+    setNote,
   }), [
     progress,
     isSectionCompleted,
@@ -122,6 +145,8 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     getQuizResult,
     setLastVisited,
     getModuleProgressPercentage,
+    updateProgress,
+    setNote,
   ]);
 
   return (

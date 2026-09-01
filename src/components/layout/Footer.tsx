@@ -1,9 +1,11 @@
 import React from 'react';
 import { useRouter } from '../../context/RouterContext';
+import { useAccess } from '../../context/AccessContext';
 import { workshopInfo } from '../../data/workshopData';
 
 export const Footer: React.FC = () => {
   const { navigate } = useRouter();
+  const { clearAccess } = useAccess();
 
   return (
     <footer className="w-full bg-white border-t border-slate-200 py-8 px-4 sm:px-8 lg:px-12 mt-auto">
@@ -33,6 +35,14 @@ export const Footer: React.FC = () => {
             className="hover:text-indigo-600 transition-colors"
           >
             Glossary
+          </button>
+          <span className="text-slate-300">•</span>
+          <button 
+            onClick={() => clearAccess()}
+            className="hover:text-rose-600 text-slate-500 transition-colors"
+            title="Exit workshop session"
+          >
+            Exit Workshop
           </button>
         </div>
       </div>

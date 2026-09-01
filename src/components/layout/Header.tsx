@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useRouter } from '../../context/RouterContext';
-import { Search, BookOpen, Layers, FileText, Bookmark, X, Menu } from 'lucide-react';
+import { useAccess } from '../../context/AccessContext';
+import { Search, LogOut, X, Menu } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { currentPath, route, navigate } = useRouter();
+  const { clearAccess } = useAccess();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quickSearchQuery, setQuickSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -125,6 +127,17 @@ export const Header: React.FC = () => {
             )}
           </div>
 
+          {/* Exit Workshop / Clear Access */}
+          <button
+            onClick={() => clearAccess()}
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-sans text-gray-500 hover:text-rose-700 hover:bg-rose-50 px-2.5 py-1.5 rounded transition-colors border border-transparent hover:border-rose-200"
+            title="Exit workshop and lock pre-reading portal"
+            aria-label="Exit workshop"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            <span className="font-medium">Exit Workshop</span>
+          </button>
+
           {/* Direct Search Page Link */}
           <button
             onClick={() => navigate('/search')}
@@ -169,6 +182,19 @@ export const Header: React.FC = () => {
               </button>
             );
           })}
+          
+          <div className="pt-2 mt-2 border-t border-gray-200">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                clearAccess();
+              }}
+              className="w-full text-left px-3 py-2 text-sm font-sans font-medium text-rose-700 hover:bg-rose-50 flex items-center gap-2"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Exit Workshop / Clear Access</span>
+            </button>
+          </div>
         </div>
       )}
     </header>

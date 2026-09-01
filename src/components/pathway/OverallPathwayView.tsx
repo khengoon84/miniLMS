@@ -210,37 +210,37 @@ export const OverallPathwayView: React.FC = () => {
         </section>
 
         {/* Final Takeaway & Completion */}
-        <section aria-labelledby="final-takeaway-heading" className="bg-slate-900 text-white rounded-2xl p-8 sm:p-10 shadow-lg border border-slate-800">
+        <section aria-labelledby="final-takeaway-heading" className="bg-slate-50 border border-slate-200/90 rounded-2xl p-8 sm:p-10 shadow-xs">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">
               <Award className="w-5 h-5" />
             </div>
-            <h2 id="final-takeaway-heading" className="text-2xl font-bold text-white tracking-tight">
+            <h2 id="final-takeaway-heading" className="text-2xl font-bold text-slate-900 tracking-tight">
               {data.finalTakeaway.heading}
             </h2>
           </div>
 
-          <p className="text-lg font-semibold text-indigo-300 mb-4">
+          <p className="text-lg font-semibold text-indigo-900 mb-4">
             {data.finalTakeaway.lead}
           </p>
 
           <ul className="space-y-3 mb-6">
             {data.finalTakeaway.bulletPoints.map((bp, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-slate-200 text-sm sm:text-base leading-relaxed">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
+              <li key={idx} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2 flex-shrink-0" />
                 <span>{bp}</span>
               </li>
             ))}
           </ul>
 
-          <div className="pt-6 border-t border-slate-800 space-y-2 text-slate-300 text-base leading-relaxed">
+          <div className="pt-6 border-t border-slate-200 space-y-2 text-slate-700 text-base leading-relaxed">
             <p>{data.finalTakeaway.conclusion}</p>
-            <p className="text-lg font-bold text-white tracking-tight">{data.finalTakeaway.closingNote}</p>
+            <p className="text-lg font-bold text-slate-900 tracking-tight">{data.finalTakeaway.closingNote}</p>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-xs text-slate-400">
-              <CheckCircle className="w-4 h-4 text-emerald-400" />
+          <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-xs font-medium text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">
+              <CheckCircle className="w-4 h-4 text-emerald-600" />
               <span>Pre-Workshop Reading Course Completed</span>
             </div>
 
@@ -248,14 +248,14 @@ export const OverallPathwayView: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate('/modules')}
-                className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors"
               >
                 Review Modules
               </button>
               <button
                 type="button"
                 onClick={() => navigate('/')}
-                className="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-md transition-all flex items-center gap-2"
+                className="px-6 py-2.5 rounded-xl bg-indigo-700 hover:bg-indigo-600 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-2"
               >
                 <span>Back to Portal Home</span>
                 <ArrowRight className="w-4 h-4" />

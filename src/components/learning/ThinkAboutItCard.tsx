@@ -12,14 +12,13 @@ export const ThinkAboutItCard: React.FC<ThinkAboutItCardProps> = ({
   item,
   className = '',
 }) => {
-  const { progress, updateProgress } = useProgress();
-  const [showNotes, setShowNotes] = useState(false);
+  const { progress, setNote } = useProgress();
   const noteKey = `note-tai-${item.id}`;
   const currentNote = progress.notes?.[noteKey] || '';
+  const [showNotes, setShowNotes] = useState(() => Boolean(currentNote));
 
   const handleNoteChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const updatedNotes = { ...(progress.notes || {}), [noteKey]: e.target.value };
-    updateProgress({ notes: updatedNotes });
+    setNote(noteKey, e.target.value);
   };
 
   return (
