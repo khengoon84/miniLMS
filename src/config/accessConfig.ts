@@ -1,5 +1,5 @@
 /**
- * ScienceLink Workshop Portal — Access Configuration
+ * NIBM Workshop Portal — Access Configuration
  *
  * This configuration controls the shared workshop access code used to gate the
  * pre-workshop reading materials for workshop participants.
@@ -27,15 +27,14 @@ export const ACCESS_CONFIG = {
   /**
    * Browser localStorage persistence key.
    */
-  STORAGE_KEY: 'sciencelink_workshop_access_granted_v1',
+  STORAGE_KEY: 'nibm_workshop_access_granted_v1',
 
   /**
    * UI Labels and copy
    */
-  portalBrand: 'ScienceLink',
+  portalBrand: 'NIBM',
   portalSubtitle: 'Workshop Portal',
   workshopTitle: 'mRNA Vaccine Design and Manufacturing',
-  courseCode: 'Course Code: MRNA-WS-2026',
   heading: 'Workshop Access',
   description: 'Please enter the access code provided for your workshop to access the pre-workshop reading materials.',
   inputLabel: 'Workshop Access Code',

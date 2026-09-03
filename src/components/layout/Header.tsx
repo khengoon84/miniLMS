@@ -44,14 +44,18 @@ export const Header: React.FC = () => {
           <button
             onClick={() => navigate('/')}
             className="flex items-center gap-2.5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-800"
-            aria-label="ScienceLink Workshop Home"
+            aria-label="National Institutes of Biotechnology Malaysia (NIBM) - Workshop Home"
+            title="National Institutes of Biotechnology Malaysia (NIBM)"
           >
-            <div className="w-8 h-8 bg-[#182232] text-white flex items-center justify-center font-bold text-sm tracking-tighter">
-              SL
+            <div 
+              className="h-8 px-2 bg-[#182232] text-white flex items-center justify-center font-bold text-xs tracking-tight rounded-sm"
+              title="National Institutes of Biotechnology Malaysia (NIBM)"
+            >
+              NIBM
             </div>
             <div>
               <span className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#182232] block leading-none">
-                ScienceLink
+                NIBM
               </span>
               <span className="text-[10px] font-sans tracking-widest text-gray-500 uppercase block font-semibold mt-0.5">
                 Workshop Portal
@@ -84,8 +88,8 @@ export const Header: React.FC = () => {
 
         {/* Header Right Actions */}
         <div className="flex items-center gap-3">
-          {/* Quick Search trigger */}
-          <div className="relative">
+          {/* Quick Search trigger - desktop only */}
+          <div className="hidden md:block relative">
             {isSearchOpen ? (
               <form onSubmit={handleQuickSearchSubmit} className="flex items-center">
                 <div className="relative flex items-center">

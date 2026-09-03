@@ -154,9 +154,6 @@ export const HomeView: React.FC = () => {
             
             {/* Header Badge Strip */}
             <div className="flex flex-wrap items-center gap-2.5 mb-4">
-              <span className="bg-slate-900 text-white font-sans text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-md">
-                {workshopInfo.code}
-              </span>
               <span className="text-indigo-700 bg-indigo-50 border border-indigo-200 text-xs tracking-wider uppercase font-semibold px-2.5 py-1 rounded-md">
                 {workshopInfo.bannerTag}
               </span>
@@ -168,7 +165,7 @@ export const HomeView: React.FC = () => {
             {/* Main Title */}
             <div className="mb-4">
               <span className="text-sm sm:text-base font-semibold text-slate-500 uppercase tracking-wider block mb-1">
-                ScienceLink Workshop
+                NIBM Workshop
               </span>
               <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
                 {workshopInfo.title}

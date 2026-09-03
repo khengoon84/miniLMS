@@ -33,8 +33,11 @@ export const WorkshopAccessView: React.FC = () => {
       <header className="w-full bg-white border-b border-gray-200 py-4 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#182232] text-white flex items-center justify-center font-bold text-sm tracking-tighter">
-              SL
+            <div 
+              className="h-8 px-2 bg-[#182232] text-white flex items-center justify-center font-bold text-xs tracking-tight rounded-sm"
+              title="National Institutes of Biotechnology Malaysia (NIBM)"
+            >
+              NIBM
             </div>
             <div>
               <span className="font-sans text-xl font-bold tracking-tight text-[#182232] block leading-none">
@@ -45,9 +48,6 @@ export const WorkshopAccessView: React.FC = () => {
               </span>
             </div>
           </div>
-          <span className="hidden sm:inline-block text-xs font-sans font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
-            {ACCESS_CONFIG.courseCode}
-          </span>
         </div>
       </header>
 
@@ -132,7 +132,7 @@ export const WorkshopAccessView: React.FC = () => {
             <div className="mt-8 pt-6 border-t border-gray-100 flex items-start gap-2.5 text-xs text-gray-500 leading-relaxed">
               <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <p>
-                Access codes are provided by ScienceLink coordinators to registered participants prior to workshop commencement.
+                Access codes are provided by NIBM coordinators to registered participants prior to workshop commencement.
               </p>
             </div>
           </div>
@@ -142,8 +142,8 @@ export const WorkshopAccessView: React.FC = () => {
       {/* Footer */}
       <footer className="w-full bg-white border-t border-gray-200 py-4 px-4 sm:px-8 text-center text-xs text-gray-500 font-sans">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>ScienceLink Pre-Workshop Reading Series · {ACCESS_CONFIG.courseCode}</span>
-          <span>© 2026 ScienceLink Scientific Program</span>
+          <span>NIBM Pre-Workshop Reading Series</span>
+          <span>© 2026 NIBM Scientific Program</span>
         </div>
       </footer>
     </div>

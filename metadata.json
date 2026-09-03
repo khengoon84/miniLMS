@@ -1,6 +1,6 @@
 {
-  "name": "ScienceLink Workshop Portal",
-  "description": "A digital scientific learning and pre-reading portal for workshop modules, scientific literature, knowledge checks, and technical resources.",
+  "name": "NIBM Workshop Portal",
+  "description": "National Institutes of Biotechnology Malaysia (NIBM) mRNA Vaccine Design and Manufacturing pre-workshop reading and interactive learning portal.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

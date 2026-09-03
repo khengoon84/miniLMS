@@ -1,5 +1,5 @@
 /**
- * ScienceLink Workshop Portal — Master Content Data Store
+ * NIBM Workshop Portal — Master Content Data Store
  *
  * AUTHORITATIVE SOURCE OF TRUTH: Master Modules 1–4
  * "Pre-Workshop Reading Materials: mRNA Vaccine Design and Manufacturing"
@@ -11,10 +11,10 @@
 import { Workshop, Module, ReadingSection, KnowledgeCheck, GlossaryTerm, ResourceItem } from '../types';
 
 export const workshopInfo: Workshop = {
-  id: 'sciencelink-mrna-workshop',
+  id: 'nibm-mrna-workshop',
   title: 'mRNA Vaccine Design and Manufacturing',
-  code: 'MRNA-WS-2026',
-  program: 'ScienceLink Pre-Workshop Reading Series',
+  code: '',
+  program: 'NIBM Pre-Workshop Reading Series',
   description: 'Pre-workshop reading materials covering the journey of an mRNA vaccine from sequence design to DNA template, IVT, purification, LNP formulation, and host-cell antigen expression.',
   longDescription: 'This reading material is designed to give you a common foundation before we begin the hands-on workshop. You do not need to memorize every detail. Instead, understand the logic of the mRNA vaccine workflow.',
   bannerTag: 'PRE-WORKSHOP READING MATERIALS',
@@ -36,7 +36,7 @@ export const workshopInfo: Workshop = {
   moduleIds: ['module-01', 'module-02', 'module-03', 'module-04'],
   metadata: {
     year: '2026',
-    publisher: 'ScienceLink Scientific Program',
+    publisher: 'NIBM Scientific Program',
     totalEstimatedHours: '2–3 Hours',
     level: 'Graduate / Professional Pre-Workshop Reading',
   },
@@ -417,7 +417,7 @@ export const readingSectionsData: Record<string, ReadingSection> = {
         caption: 'Schematic comparison showing the shift from delivering whole pathogens or external recombinant proteins to delivering cytoplasmic mRNA instructions.',
         alt: 'Diagram comparing live-attenuated, inactivated, subunit, viral vector, DNA, and mRNA vaccine platforms',
         isPlaceholder: true,
-        source: 'ScienceLink Pre-Workshop Master Reading Materials',
+        source: 'NIBM Pre-Workshop Master Reading Materials',
       },
     ],
   },
@@ -576,7 +576,7 @@ export const readingSectionsData: Record<string, ReadingSection> = {
         caption: 'Schematic representation of the complete synthetic mRNA construct showing the 5′ Cap, 5′ UTR, Kozak sequence, Open Reading Frame (ORF), 3′ UTR, and Poly(A) tail.',
         alt: 'Diagram showing structural anatomy of a synthetic mRNA transcript from 5 prime cap to poly A tail',
         isPlaceholder: true,
-        source: 'ScienceLink Pre-Workshop Master Reading Materials',
+        source: 'NIBM Pre-Workshop Master Reading Materials',
       },
       {
         type: 'heading',
@@ -1055,7 +1055,7 @@ export const readingSectionsData: Record<string, ReadingSection> = {
           ['Residual DNA', 'DNA-specific assay'],
           ['Endotoxin', 'LAL or recombinant Factor C assay'],
         ],
-        footerNote: 'Source: ScienceLink Master Pre-Workshop Reading Materials (Module 3).',
+        footerNote: 'Source: NIBM Master Pre-Workshop Reading Materials (Module 3).',
       },
       {
         type: 'paragraph',
@@ -1271,7 +1271,7 @@ export const readingSectionsData: Record<string, ReadingSection> = {
         caption: 'Schematic illustrating the rapid mixing of ethanolic lipid phase with acidic aqueous RNA phase, self-assembly into LNPs, and subsequent buffer exchange.',
         alt: 'Microfluidic mixing schematic showing lipid phase and aqueous RNA phase converging to form LNPs',
         isPlaceholder: true,
-        source: 'ScienceLink Pre-Workshop Master Reading Materials',
+        source: 'NIBM Pre-Workshop Master Reading Materials',
       },
     ],
   },
@@ -1306,7 +1306,7 @@ export const readingSectionsData: Record<string, ReadingSection> = {
           ['Zeta potential', 'Electrophoretic light scattering', 'Surface-charge characteristics'],
           ['Encapsulation efficiency', 'Fluorescence-based assay', 'Fraction of RNA associated with particles'],
         ],
-        footerNote: 'Source: ScienceLink Master Pre-Workshop Reading Materials (Module 4).',
+        footerNote: 'Source: NIBM Master Pre-Workshop Reading Materials (Module 4).',
       },
       {
         type: 'paragraph',
@@ -1670,7 +1670,7 @@ export const resourcesData: ResourceItem[] = [
     category: 'core',
     type: 'pdf',
     sizeOrDoi: 'PDF • Master Course Document (13 Pages)',
-    authorInfo: 'ScienceLink Scientific Program Committee',
+    authorInfo: 'NIBM Scientific Program Committee',
     publishedDate: '2026',
     downloadUrl: '/resources/master-guide-mrna-vaccine-design.pdf',
   },

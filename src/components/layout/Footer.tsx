@@ -11,8 +11,8 @@ export const Footer: React.FC = () => {
     <footer className="w-full bg-white border-t border-slate-200 py-8 px-4 sm:px-8 lg:px-12 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
         <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-2 sm:gap-4 text-center sm:text-left">
-          <span className="font-bold text-sm text-slate-900 tracking-tight">ScienceLink</span>
-          <span>{workshopInfo.title} · Course Code: {workshopInfo.code}</span>
+          <span className="font-bold text-sm text-slate-900 tracking-tight">NIBM</span>
+          <span>{workshopInfo.title}</span>
         </div>
 
         <div className="flex items-center gap-4 sm:gap-6 text-slate-600">

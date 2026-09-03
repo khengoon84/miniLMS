@@ -28,7 +28,7 @@ export const OverallPathwayView: React.FC = () => {
 
   const [checkedQuestions, setCheckedQuestions] = useState<Record<number, boolean>>(() => {
     try {
-      const saved = localStorage.getItem('sciencelink_pathway_reflection');
+      const saved = localStorage.getItem('nibm_pathway_reflection');
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -39,7 +39,7 @@ export const OverallPathwayView: React.FC = () => {
     const updated = { ...checkedQuestions, [idx]: !checkedQuestions[idx] };
     setCheckedQuestions(updated);
     try {
-      localStorage.setItem('sciencelink_pathway_reflection', JSON.stringify(updated));
+      localStorage.setItem('nibm_pathway_reflection', JSON.stringify(updated));
     } catch {
       // ignore
     }

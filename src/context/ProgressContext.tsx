@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
 import { UserProgressState } from '../types';
 
-const STORAGE_KEY = 'sciencelink_user_progress_v1';
+const STORAGE_KEY = 'nibm_user_progress_v1';
 
 interface ProgressContextType {
   progress: UserProgressState;

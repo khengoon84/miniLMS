@@ -1,13 +1,13 @@
 /**
- * Core Data Models for ScienceLink Workshop Portal
+ * Core Data Models for NIBM Workshop Portal
  * Strictly client-side, typed, and content-driven.
  */
 
 export interface Workshop {
   id: string;
   title: string;
-  code: string; // e.g. "SCI-WS-101"
-  program: string; // e.g. "ScienceLink Workshop Series"
+  code: string; // e.g. "WS-101"
+  program: string; // e.g. "NIBM Workshop Series"
   description: string;
   longDescription?: string;
   bannerTag?: string;
