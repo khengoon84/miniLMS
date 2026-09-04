@@ -69,7 +69,7 @@ export const SearchView: React.FC = () => {
             <Search className="w-5 h-5 text-gray-400 ml-2.5 mr-2 shrink-0" />
             <input
               type="text"
-              placeholder="Search concepts (e.g., 'HPLC', 'retention time', 'quantum', 'dsRNA', 'SOP')..."
+              placeholder="Search concepts (e.g., 'IVT', 'dsRNA', 'Lipid Nanoparticle', '5′ Cap', 'Purification')..."
               value={query}
               onChange={(e) => handleQueryChange(e.target.value)}
               className="w-full py-2.5 px-2 text-base font-sans bg-transparent focus:outline-none text-gray-900 placeholder:text-gray-400"
@@ -151,7 +151,7 @@ export const SearchView: React.FC = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-sans">
               <span className="text-gray-400">Try searching:</span>
-              {['HPLC', 'Retention Time', 'Quantum', 'dsRNA', 'SOP', 'Lipid Nanoparticle'].map((s) => (
+              {['IVT', 'Lipid Nanoparticle', 'dsRNA', '5′ Cap', 'Ionizable Lipid', 'Purification', 'Poly(A)'].map((s) => (
                 <button
                   key={s}
                   onClick={() => handleQueryChange(s)}
@@ -170,12 +170,15 @@ export const SearchView: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 font-sans text-xs">
               {[
-                { label: 'High-Performance Liquid Chromatography', query: 'HPLC' },
-                { label: 'Retention Time & Plate Count', query: 'Retention Time' },
-                { label: 'Lipid Nanoparticle Delivery', query: 'Lipid Nanoparticle' },
-                { label: 'Quantum State Tomography', query: 'Tomography' },
                 { label: 'In Vitro Transcription (IVT)', query: 'IVT' },
-                { label: 'Cryostat Cool-down SOP', query: 'Cryostat' },
+                { label: 'Lipid Nanoparticle (LNP) Delivery', query: 'Lipid Nanoparticle' },
+                { label: 'Double-Stranded RNA (dsRNA)', query: 'dsRNA' },
+                { label: 'mRNA Structural Anatomy & 5′ Cap', query: 'Cap' },
+                { label: 'Ionizable Lipids & Formulation', query: 'Ionizable Lipid' },
+                { label: 'Downstream mRNA Purification & QC', query: 'Purification' },
+                { label: 'Poly(A) Tail & UTR Architecture', query: 'Poly(A)' },
+                { label: 'Endosomal Escape & Translation', query: 'Endosomal Escape' },
+                { label: 'Modified Nucleosides (m1Ψ)', query: 'Pseudouridine' },
               ].map((item) => (
                 <button
                   key={item.label}

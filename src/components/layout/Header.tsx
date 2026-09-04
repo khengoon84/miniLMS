@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
                   <input
                     type="text"
                     autoFocus
-                    placeholder="Search modules, terms, SOPs..."
+                    placeholder="Search modules, concepts, protocols..."
                     value={quickSearchQuery}
                     onChange={(e) => setQuickSearchQuery(e.target.value)}
                     className="w-56 sm:w-72 pl-9 pr-8 py-1.5 text-sm bg-gray-50 border border-gray-300 focus:bg-white focus:outline-none focus:border-[#182232] font-sans transition-all"
