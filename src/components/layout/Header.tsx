@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from '../../context/RouterContext';
 import { useAccess } from '../../context/AccessContext';
 import { Search, LogOut, X, Menu } from 'lucide-react';
+import { NIBMLogo } from '../common/NIBMLogo';
 
 export const Header: React.FC = () => {
   const { currentPath, route, navigate } = useRouter();
@@ -43,22 +44,17 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-6 md:gap-8">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2.5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-800"
+            className="flex items-center gap-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-md py-0.5"
             aria-label="National Institutes of Biotechnology Malaysia (NIBM) - Workshop Home"
             title="National Institutes of Biotechnology Malaysia (NIBM)"
           >
-            <div 
-              className="h-8 px-2 bg-[#182232] text-white flex items-center justify-center font-bold text-xs tracking-tight rounded-sm"
-              title="National Institutes of Biotechnology Malaysia (NIBM)"
-            >
-              NIBM
-            </div>
-            <div>
-              <span className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#182232] block leading-none">
-                NIBM
-              </span>
-              <span className="text-[10px] font-sans tracking-widest text-gray-500 uppercase block font-semibold mt-0.5">
+            <NIBMLogo variant="compact" className="h-9 w-auto hover:opacity-90 transition-opacity" />
+            <div className="border-l border-gray-200 pl-3">
+              <span className="font-sans text-xs sm:text-sm font-bold tracking-tight text-[#182232] block leading-tight">
                 Workshop Portal
+              </span>
+              <span className="hidden sm:block text-[10px] font-sans tracking-tight text-gray-500 leading-tight">
+                National Institutes of Biotechnology Malaysia
               </span>
             </div>
           </button>

@@ -3,6 +3,7 @@ import { useRouter } from '../../context/RouterContext';
 import { useProgress } from '../../context/ProgressContext';
 import { workshopInfo, modulesData, resourcesData, glossaryTermsData } from '../../data/workshopData';
 import { overallWorkshopPathwayData } from '../../data/learningSupportData';
+import { NIBMLogo } from '../common/NIBMLogo';
 import { 
   BookOpen, 
   Layers, 
@@ -150,16 +151,19 @@ export const HomeView: React.FC = () => {
 
         {/* Institutional Hero Banner */}
         <section aria-labelledby="hero-heading" className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs relative overflow-hidden">
-          <div className="max-w-3xl relative z-10">
+          <div className="max-w-4xl relative z-10">
             
-            {/* Header Badge Strip */}
-            <div className="flex flex-wrap items-center gap-2.5 mb-4">
-              <span className="text-indigo-700 bg-indigo-50 border border-indigo-200 text-xs tracking-wider uppercase font-semibold px-2.5 py-1 rounded-md">
-                {workshopInfo.bannerTag}
-              </span>
-              <span className="text-slate-500 text-xs tracking-wider uppercase font-semibold">
-                {workshopInfo.program}
-              </span>
+            {/* Institution Brand & Header Badge Strip */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
+              <NIBMLogo variant="full" className="h-12 sm:h-14 w-auto" />
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-indigo-700 bg-indigo-50 border border-indigo-200 text-xs tracking-wider uppercase font-semibold px-2.5 py-1 rounded-md">
+                  {workshopInfo.bannerTag}
+                </span>
+                <span className="text-slate-500 text-xs tracking-wider uppercase font-semibold">
+                  {workshopInfo.program}
+                </span>
+              </div>
             </div>
 
             {/* Main Title */}

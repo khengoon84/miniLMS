@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAccess } from '../../context/AccessContext';
 import { ACCESS_CONFIG } from '../../config/accessConfig';
 import { Lock, ArrowRight, AlertCircle, KeyRound, ShieldCheck } from 'lucide-react';
+import { NIBMLogo } from '../common/NIBMLogo';
 
 export const WorkshopAccessView: React.FC = () => {
   const { grantAccess } = useAccess();
@@ -30,21 +31,16 @@ export const WorkshopAccessView: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#fbf8fa] flex flex-col justify-between selection:bg-[#182232] selection:text-white">
       {/* Top Brand Bar */}
-      <header className="w-full bg-white border-b border-gray-200 py-4 px-4 sm:px-8">
+      <header className="w-full bg-white border-b border-gray-200 py-3.5 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div 
-              className="h-8 px-2 bg-[#182232] text-white flex items-center justify-center font-bold text-xs tracking-tight rounded-sm"
-              title="National Institutes of Biotechnology Malaysia (NIBM)"
-            >
-              NIBM
-            </div>
-            <div>
-              <span className="font-sans text-xl font-bold tracking-tight text-[#182232] block leading-none">
-                {ACCESS_CONFIG.portalBrand}
-              </span>
-              <span className="text-[10px] font-sans tracking-widest text-gray-500 uppercase block font-semibold mt-0.5">
+            <NIBMLogo variant="compact" className="h-9 w-auto" />
+            <div className="border-l border-gray-200 pl-3">
+              <span className="font-sans text-xs sm:text-sm font-bold tracking-tight text-[#182232] block leading-tight">
                 {ACCESS_CONFIG.portalSubtitle}
+              </span>
+              <span className="text-[10px] font-sans tracking-tight text-gray-500 block leading-tight">
+                National Institutes of Biotechnology Malaysia
               </span>
             </div>
           </div>
@@ -56,11 +52,14 @@ export const WorkshopAccessView: React.FC = () => {
         <div className="w-full max-w-lg">
           {/* Main Card */}
           <div className="bg-white border border-gray-200/90 rounded-2xl shadow-xs p-6 sm:p-10">
-            {/* Header / Intro */}
+            {/* Header / Intro with Official NIBM Logo */}
             <div className="mb-8 text-center sm:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-sans font-medium border border-slate-200 mb-4">
-                <Lock className="w-3.5 h-3.5 text-slate-600" />
-                <span>Pre-Workshop Access Gate</span>
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <NIBMLogo variant="full" className="h-12 sm:h-14 w-auto" />
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-sans font-medium border border-slate-200 shrink-0">
+                  <Lock className="w-3.5 h-3.5 text-slate-600" />
+                  <span>Access Gate</span>
+                </div>
               </div>
               <h1 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-[#182232] mb-2">
                 {ACCESS_CONFIG.heading}
