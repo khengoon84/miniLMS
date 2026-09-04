@@ -28,10 +28,14 @@ export const NIBMLogo: React.FC<NIBMLogoProps> = ({
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>{title}</title>
-        <rect width="256" height="256" rx="48" fill="#FFFFFF" stroke="#F1F3F5" strokeWidth="4" />
-        <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', serif", fontWeight: 900 }}>
-          <text x="14" y="206" fontSize="195" fill="#EB5B24">N</text>
-          <text x="140" y="206" fontSize="104" fill="#EB5B24">IBM</text>
+        <rect width="256" height="256" rx="48" fill="#FFFFFF" stroke="#E5E7EB" strokeWidth="3" />
+        <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', Georgia, serif", fontWeight: 900 }}>
+          <text x="24" y="168" fontSize="104" fill="#EB5B24">
+            N
+          </text>
+          <text x="108" y="168" fontSize="58" fill="#EB5B24" letterSpacing="0.5px">
+            IBM
+          </text>
         </g>
       </svg>
     );
@@ -40,16 +44,20 @@ export const NIBMLogo: React.FC<NIBMLogoProps> = ({
   if (variant === 'compact') {
     return (
       <svg
-        viewBox="0 0 340 180"
+        viewBox="0 0 380 150"
         className={`w-auto shrink-0 select-none ${className}`}
         role="img"
         aria-label={title}
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>{title}</title>
-        <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', serif", fontWeight: 800 }}>
-          <text x="8" y="160" fontSize="190" fill="#EB5B24">N</text>
-          <text x="156" y="160" fontSize="102" fill="#EB5B24" letterSpacing="2px">IBM</text>
+        <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', Georgia, serif", fontWeight: 800 }}>
+          <text x="16" y="130" fontSize="145" fill="#EB5B24">
+            N
+          </text>
+          <text x="140" y="130" fontSize="80" fill="#EB5B24" letterSpacing="1px">
+            IBM
+          </text>
         </g>
       </svg>
     );
@@ -58,33 +66,33 @@ export const NIBMLogo: React.FC<NIBMLogoProps> = ({
   // Default 'full' variant
   return (
     <svg
-      viewBox="0 0 540 270"
+      viewBox="0 0 580 270"
       className={`w-auto shrink-0 select-none ${className}`}
       role="img"
       aria-label={title}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>{title}</title>
-      <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', serif" }}>
+      <g style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Times New Roman', Georgia, serif" }}>
         {/* Tall N */}
-        <text x="16" y="215" fontSize="236" fontWeight="800" fill="#EB5B24">
+        <text x="24" y="206" fontSize="215" fontWeight="800" fill="#EB5B24">
           N
         </text>
 
         {/* Baseline-aligned IBM */}
-        <text x="195" y="215" fontSize="128" fontWeight="800" fill="#EB5B24" letterSpacing="2px">
+        <text x="190" y="206" fontSize="118" fontWeight="800" fill="#EB5B24" letterSpacing="1.5px">
           IBM
         </text>
 
         {/* Subtitle text */}
         {showSubtitle && (
           <text
-            x="14"
-            y="254"
+            x="24"
+            y="248"
             fontSize="15"
             fontWeight="700"
             fill="#000000"
-            textLength="512"
+            textLength="532"
             lengthAdjust="spacing"
           >
             NATIONAL INSTITUTES OF BIOTECHNOLOGY MALAYSIA
